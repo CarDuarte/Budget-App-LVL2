@@ -1,0 +1,28 @@
+$primaryButtonColor : rgb(47, 125, 95);
+@mixin flexCenter{
+  height: 20vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexDir($direction) {
+  flex-direction: $direction; 
+}
+
+header{
+  background: lightblue;
+  @include flexCenter();
+  @include flexDir(column);
+  button{
+    background: $primaryButtonColor;
+    &:hover{
+      background: gray;
+    }
+  }
+}
+
+.contact button{
+  background: $primaryButtonColor;
+}
+

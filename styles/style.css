@@ -1,0 +1,18 @@
+header {
+  background: lightblue;
+  height: 20vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+header button {
+  background: rgb(47, 125, 95);
+}
+header button:hover {
+  background: gray;
+}
+
+.contact button {
+  background: rgb(47, 125, 95);
+}/*# sourceMappingURL=style.css.map */
