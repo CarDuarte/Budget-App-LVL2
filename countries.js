@@ -1,12 +1,7 @@
 const currencies = {
-  AUD: "Australian Dollar",
-  CAD: "Canadian Dollar",
   EUR: "Euro",
-  GBP: "British Pound",
-  INR: "Indian Rupee",
-  JPN: "Japanese Yen",
   USD: "United States Dollar",
-  ZAR: "South African Rand",
+  HNL: "Honduran Lempira"
 };
 
 const primaryCurrency = document.getElementById("primary");
@@ -17,18 +12,26 @@ secondaryCurrency.innerHTML = getOptions(currencies);
 
 function getOptions(data) {
   return Object.entries(data)
-    .map(([country, currency]) => `<option value="${country}">${country} | ${currency}</option>`)
+    .map(
+      ([country, currency]) =>
+        `<option selected value="${country}">${country} | ${currency}</option>`
+    )
     .join("");
 }
 
-document.getElementById("btn-convert").addEventListener("click", fetchCurrencies);
+document
+  .getElementById("btn-convert")
+  .addEventListener("click", fetchCurrencies);
 
 function fetchCurrencies() {
   const primary = primaryCurrency.value;
   const secondary = secondaryCurrency.value;
-  const amount = document.getElementById("amount").value;
-  // Important: Include your API key below
-  fetch("https://v6.exchangerate-api.com/v6/9b0c8d794dd359363f8c5069/latest/" + primary)
+  const amountCurrency =
+    document.getElementById("amount-currency").value;
+  fetch(
+    "https://v6.exchangerate-api.com/v6/9b0c8d794dd359363f8c5069/latest/" +
+      primary
+  )
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -38,14 +41,17 @@ function fetchCurrencies() {
     })
     .then((data) => {
       console.log(data);
-      displayCurrency(data, primary, secondary, amount);
+      displayCurrency(data, primary, secondary, amountCurrency);
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 }
 
-function displayCurrency(data, primary, secondary, amount) {
-  const calculated = amount * data.conversion_rates[secondary];
+function displayCurrency(data, primary, secondary, amountCurrency) {
+  const calculated = amountCurrency * data.conversion_rates[secondary];
+  console.log(amountCurrency);
   document.getElementById("result").setAttribute("style", "display:block");
-  document.getElementById("txt-primary").innerText = amount + " " + primary + " = ";
-  document.getElementById("txt-secondary").innerText = calculated + " " + secondary;
+  document.getElementById("txt-primary").innerText =
+    amountCurrency + " " + primary + " = ";
+  document.getElementById("txt-secondary").innerText =
+    calculated + " " + secondary;
 }
