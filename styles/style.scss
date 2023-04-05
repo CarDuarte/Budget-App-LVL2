@@ -1,4 +1,5 @@
 $color1: #363d55;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
   padding: 0;
@@ -167,4 +168,9 @@ body {
     grid-template-columns: 1fr;
     gap: 1em;
   }
+}
+
+.coin-exchange-div{
+  display: inline-block;
+  width: 50%;
 }

@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="currency-style.css" />
     <title>Front-End Dev 2</title>
   </head>
   <body>
@@ -15,6 +17,7 @@
             <h3>Budget</h3>
             <p class="hide error" id="budget-error">Value cannot be empty</p>
             <input type="number" id="total-amount" placeholder="Enter amount" />
+            
             <button class="submit" id="total-amount-button">Set budget</button>
           </div>
           <div class="user-amount-container">
@@ -22,16 +25,12 @@
             <p class="hide error" id="product-title-error">
               Value cannot be empty
             </p>
-            <input
-              type="text"
-              class="product-title"
-              id="product-title"
-              placeholder="Enter name of product"
-            />
-            <input type="number" class="user-amount" placeholder="Enter Cost" />
-            <button class="submit" id="check-amount">Set budget</button>
+            <input type="text" id="product-title" class="product-title"  placeholder="Enter name of product"/>
+            <input type="number" id="user-amount" class="user-amount" placeholder="Enter Cost"/>
+            <button class="submit" id="check-amount">Set expense</button>
           </div>
         </div>
+        
         <div class="output-container flex-space">
           <div>
             <p>Total Budget</p>
@@ -43,7 +42,7 @@
           </div>
           <div>
             <p>Balance</p>
-            <span id="balabce-amount"> 0 </span>
+            <span id="balance-amount"> 0 </span>
           </div>
         </div>
       </div>
@@ -53,5 +52,20 @@
         <div class="list-container" id="list"></div>
       </div>
     </div>
+
+    <form>
+      <input id="amount-currency" class="amount-currency" type="number" placeholder="Add amount" />
+      <select id="primary" class="input"></select>
+      <select id="secondary" class="input"></select>   
+      <input class="submit" id="btn-convert" type="button" value="Convert" />   
+    </form>
+    <p id="result" class="p-currency" style="display:none;">
+      <span id="txt-primary"></span>
+      <span id="txt-secondary"></span>
+    </p>
+
+    <script src="index.js"></script>
+    <script src="countries.js"></script>
   </body>
+
 </html>
