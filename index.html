@@ -8,15 +8,49 @@
     <title>Front-End Dev 2</title>
   </head>
   <body>
-    <header>
-      <h1>Title</h1>
-      <button>Button 1</button>
-    </header>
-    <div class="contact">
-      <button>Submit</button>
-      <div class="info">
-        <h1>Our contact info</h1>
-        <p>This is our info</p>
+    <div class="wrapper">
+      <div class="container">
+        <div class="sub-container">
+          <div class="total-amount-container">
+            <h3>Budget</h3>
+            <p class="hide error" id="budget-error">Value cannot be empty</p>
+            <input type="number" id="total-amount" placeholder="Enter amount" />
+            <button class="submit" id="total-amount-button">Set budget</button>
+          </div>
+          <div class="user-amount-container">
+            <h3>Expenses</h3>
+            <p class="hide error" id="product-title-error">
+              Value cannot be empty
+            </p>
+            <input
+              type="text"
+              class="product-title"
+              id="product-title"
+              placeholder="Enter name of product"
+            />
+            <input type="number" class="user-amount" placeholder="Enter Cost" />
+            <button class="submit" id="check-amount">Set budget</button>
+          </div>
+        </div>
+        <div class="output-container flex-space">
+          <div>
+            <p>Total Budget</p>
+            <span id="amount"> 0 </span>
+          </div>
+          <div>
+            <p>Expenses</p>
+            <span id="expenditure-value"> 0 </span>
+          </div>
+          <div>
+            <p>Balance</p>
+            <span id="balabce-amount"> 0 </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <h3>Expenses List</h3>
+        <div class="list-container" id="list"></div>
       </div>
     </div>
   </body>
