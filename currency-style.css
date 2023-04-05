@@ -1,0 +1,18 @@
+.input {
+  width: 25%;
+  padding: 0.6em 0.3em;
+  border: 2px solid #d0d0d0;
+  border-radius: 0;
+  color: #363d55;
+  outline: none;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+}
+
+.amount-currency {
+  color: #414a67;
+  margin-left: 10%;
+  padding: 0.6em 0.3em;
+  border: 2px solid #d0d0d0;
+  border-radius: 0;
+}
